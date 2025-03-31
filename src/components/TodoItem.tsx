@@ -44,7 +44,7 @@ const TodoItem: FC<TodoItemProps> = ({
           .map((todo) => (
             <li
               key={todo.id}
-              className="mt-4 flex justify-between items-center bg-amber-700 px-4 py-2 rounded"
+              className="mt-4 flex justify-between items-center space-x-6  px-4 py-2 rounded  bg-linear-65 from-teal-800 to-teal-500 "
             >
               <div className="flex items-center space-x-2">
                 <input
@@ -54,15 +54,15 @@ const TodoItem: FC<TodoItemProps> = ({
                   className="form-checkbox h-4 w-4 text-amber-500"
                 />
                 <div
-                  className={`text-white
+                  className={`text-white font-semibold capitalize text-normal
                      ${todo.completed ? "line-through" : ""} `}
                 >
                   {todo.title}
                 </div>
               </div>
-              <div className="space-x-6">
+              <div className="space-x-2">
                 <button
-                  className={`cursor-pointer ${
+                  className={`cursor-pointer  p-1  bg-amber-800 hover:bg-amber-950 rounded py-1 px-2 transition ease-in duration-30  ${
                     todo.completed ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   onClick={() => updateTodoHandler(todo)}
@@ -71,7 +71,7 @@ const TodoItem: FC<TodoItemProps> = ({
                   <Pencil size={22} />
                 </button>
                 <button
-                  className=" cursor-pointer"
+                  className=" cursor-pointer bg-amber-800 hover:bg-amber-950 rounded py-1 px-2 transition ease-in duration-300"
                   onClick={() => removeTodoHandler(todo.id)}
                 >
                   <Trash2 size={22} />
